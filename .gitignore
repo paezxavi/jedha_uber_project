@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+jedha_uber__instructions.ipynb
+
+# The pickups are not redistributed here: 280 MB extracted, 101 MB zipped, over GitHub's
+# file-size limit. One command downloads them -- see the README.
+data/
