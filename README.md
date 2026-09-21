@@ -12,9 +12,8 @@ The full analysis, with every parameter choice and its measured cost, is in
 ## The problem
 
 Uber's own research gives the constraint the whole project hangs on: **a rider accepts a wait of 5
-to 7 minutes and cancels beyond it.** A driver in the Castro is useless to a rider in the Financial
-District. The brief asks for a map of hot zones, a description **per day of week**, and a
-comparison of **two unsupervised algorithms**.
+to 7 minutes and cancels beyond it.** The brief asks for a map of hot zones, a description **per day
+of week**, and a comparison of **two unsupervised algorithms**.
 
 All three are below. Two of the three answers are not the expected ones:
 
@@ -31,8 +30,7 @@ All three are below. Two of the three answers are not the expected ones:
 
 `data/uber-trip-data/uber-raw-data-*14.csv` — **4 534 327 pickups**, April to September 2014, four
 columns: a minute, a latitude, a longitude, and the Uber base that dispatched the ride. No
-drop-off, no rider, no fare, no duration. It is a stream of points in space and time, which is what
-a clustering question needs and nothing more.
+drop-off, no rider, no fare, no duration. It is a stream of points in space and time.
 
 The archive also ships six more months as `uber-raw-data-janjune-15.csv.zip`. **It is not used, and
 not by preference:** that file has no coordinates. It identifies a pickup by `locationID`, a
@@ -47,10 +45,10 @@ Two things in the file look like they need a cleaning rule. Only one of them doe
 | **21 227 pickups outside New York** | **dropped** | 0.47% of pickups, over 151 cells of 10 km, median 26 each |
 
 The duplicates are two riders, not one pickup counted twice: a row is duplicated when two pickups
-share a minute, a base **and** an 11-metre square, and with a median of 16 pickups a minute over
-260 000 minutes that is arithmetic. The shape agrees — 82 225 of the 82 403 groups are *pairs*, not
-long runs — and so does the rate: **1.96% within 1.5 km of an airport against 1.81% everywhere
-else**, the same rate at the two extremes of density. A broken export would cluster somewhere.
+share a minute, a position **and** a base, and with a median of 16 pickups a minute over 260 093
+minutes, the 82 581 duplicated rows form **82 225 pairs, 178 triples, and nothing larger**. The
+rate agrees: **1.96% within 1.5 km of an airport against 1.81% everywhere else**, the same at the
+two extremes of density. A broken export would cluster somewhere.
 
 ## What we found
 
