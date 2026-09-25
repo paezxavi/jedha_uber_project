@@ -42,13 +42,11 @@ Two things in the file look like they need a cleaning rule. Only one of them doe
 | | verdict | cost of the rule |
 |---|---|---|
 | **82 581 duplicated rows** | **kept** | they would be 1.8% of the demand, deleted |
-| **21 227 pickups outside New York** | **dropped** | 0.47% of pickups, over 151 cells of 10 km, median 26 each |
+| **21 227 pickups outside New York** | **dropped** | 0.47% of pickups, from latitude 39.66 to 42.12 |
 
 The duplicates are two riders, not one pickup counted twice: a row is duplicated when two pickups
 share a minute, a position **and** a base, and with a median of 16 pickups a minute over 260 093
-minutes, the 82 581 duplicated rows form **82 225 pairs, 178 triples, and nothing larger**. The
-rate agrees: **1.96% within 1.5 km of an airport against 1.81% everywhere else**, the same at the
-two extremes of density. A broken export would cluster somewhere.
+minutes, the 82 581 duplicated rows form **82 225 pairs, 178 triples, and nothing larger**.
 
 ## What we found
 

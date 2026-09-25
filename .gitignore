@@ -6,4 +6,7 @@ jedha_uber__instructions.ipynb
 
 # The pickups are not redistributed here: 280 MB extracted, 101 MB zipped, over GitHub's
 # file-size limit. One command downloads them -- see the README.
-data/
+data/*
+# ...except the borough boundaries: 1.5 MB, published by the NYC Department of City Planning,
+# and the cleaning rule of section 2.2 depends on them.
+!data/nyc_boroughs.geojson
